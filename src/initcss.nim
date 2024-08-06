@@ -92,7 +92,76 @@ p, h1, h2, h3, h4, h5, h6 {
  /* Components       */
  /* **************** */
     """
-    let css = [rest, globalVars, startHere]
+    let mediaQuery = """
+ /* **************** */
+ /* Media Queries    */
+ /* **************** */
+
+/* Extra Large */ 
+
+@media (min-width: 120.01rem) {
+body {
+    font-size: 1.4rem;
+}
+h1 {
+    font-size : 6rem;
+}
+}
+
+/* Desktops */ 
+
+@media (min-width: 75.01rem) and (max-width: 119.93rem)  {
+body {
+    font-size: 1.3rem;
+}
+h1 {
+    font-size : 5rem;
+}
+}
+/* Laptops / Large Tablets */
+
+@media (min-width: 62.01rem) and (max-width: 74.95rem)  {
+body {
+    font-size: 1.2rem;
+}
+h1 {
+    font-size : 4rem;
+}
+}
+
+/* Small tablets */ 
+
+@media (min-width: 48.01rem) and (max-width: 61.95rem)  {
+body {
+    font-size: 1.1rem;
+}
+h1 {
+    font-size : 3rem;
+}
+}
+
+/* Extra small devices */ 
+
+@media (min-width: 30.06rem) and (max-width: 47.95rem)  {
+body {
+    font-size: 1.1rem;
+}
+h1 {
+    font-size : 3rem;
+}
+}
+/* Mobile */
+
+@media (max-width: 30.05rem)  {
+body {
+    font-size: 1.1rem;
+}
+h1 {
+    font-size : 3rem;
+}
+}
+"""
+    let css = [rest, globalVars, startHere, mediaQuery]
     let f = open("main.css", fmWrite)
     defer: f.close()
 
